@@ -428,7 +428,7 @@ void uwsgi_setup_log_master(void) {
 	}
 #endif
 
-	uwsgi.original_log_fd = dup(1);
+	uwsgi.original_log_fd = dup(2);
 	create_logpipe();
 }
 
