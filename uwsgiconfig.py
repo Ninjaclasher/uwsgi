@@ -1395,8 +1395,9 @@ try:
     execfile
 except NameError:
     def execfile(path, up):
+        import builtins
         with open(path) as py:
-            code = __builtins__.compile(py.read(), path, 'exec')
+            code = builtins.compile(py.read(), path, 'exec')
         exec(code, up)
 
 
